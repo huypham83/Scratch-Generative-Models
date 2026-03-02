@@ -100,7 +100,7 @@ if train == True:
             # Train G
             new_fakes = generator.forward(current_batch_size)
             
-            d_pred_new = discriminator.forward(new_fakes, is_training=False)
+            d_pred_new = discriminator.forward(new_fakes)
             
             g_loss = loss_func.forward(d_pred_new, real_labels)
             g_loss_total += g_loss
